@@ -376,4 +376,16 @@
     if(!cell) return;
     var iso = cell.getAttribute("data-iso");
     selectedDay = selectedDay===iso ? null : iso;
-    renderCalendar();
+    renderCalendar();});
+  document.getElementById("cal-prev").addEventListener("click", function(){
+    calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth()-1, 1); selectedDay=null; renderCalendar();
+  });
+  document.getElementById("cal-next").addEventListener("click", function(){
+    calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth()+1, 1); selectedDay=null; renderCalendar();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
